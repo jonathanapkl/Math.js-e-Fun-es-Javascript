@@ -1,60 +1,23 @@
-# Principais recursos da biblioteca Math.js e Principais funções em Javascript
+# 🧮 Math.js Study Tool & JS Guide
 
-## 🧮 Exemplo de Código com Math.js
+Este é um projeto interativo desenvolvido para facilitar o estudo da biblioteca **Math.js** e de conceitos fundamentais de **JavaScript**. O site funciona como um "playground" e guia de referência, permitindo testar funções matemáticas e consultar documentações rápidas em um único lugar.
 
-```js
-const math = require('mathjs');
+## 🚀 Funcionalidades
 
-console.log("Soma: ", math.add(10, 5));                  // 15
-console.log("Multiplicação: ", math.multiply(4, 7));     // 28
-console.log("Expressão: ", math.evaluate('2 + 3 * 4'));  // 14
-console.log("Média: ", math.mean([3, 6, 9]));            // 6
-```
+- **Editor de Código Interativo**: Execute scripts JavaScript e funções da Math.js diretamente no navegador com uma saída de console integrada.
+- **Modo Tela Cheia**: Foco total no editor para codificação sem distrações.
+- **Alternância de Tema**: Suporte a modo claro e modo escuro (Dark Mode) com persistência automática via `localStorage`.
+- **Guia de Referência Completo**:
+    - **Recursos Math.js**: Conversão de unidades, álgebra simbólica, trigonometria e estatística.
+    - **Fundamentos JS**: Manipulação de Strings, Arrays, Objetos, Funções e Laços.
+    - **Exemplos Práticos**: Coleção de códigos prontos para estudo.
+- **Lista de Atalhos**: Seção dedicada a atalhos de produtividade inspirados no VS Code.
+- **Interface Moderna**: Design limpo e responsivo utilizando a fonte Poppins e realce de sintaxe com **Highlight.js**.
 
----
+## 🛠️ Tecnologias Utilizadas
 
-## 🧰 Funções comuns em JavaScript
-
-### 🔤 Manipulação de Strings
-
-- `.split()` -> Divide uma string em partes
-- `.trim()` -> Remove espaços no início/fim
-- `.toLowerCase()` / `.toUpperCase()`
-- `.replace()` -> Substitui trechos da string
-- `.includes()` -> Verifica se contém texto
-
-### 🧱 Manipulação de Arrays
-
-- `.push()`, `.pop()`, `.shift()`, `.unshift()`
-- `.map()`, `.filter()`, `.reduce()`
-- `.forEach()` -> Itera sobre o array
-- `.includes()`, `.indexOf()`
-- `.slice()`, `.splice()`
-
-### 🔁 Conversões
-
-- `Number("10")` -> converte para número
-- `String(123)` ou `123.toString()`
-- `JSON.stringify()` / `JSON.parse()`
-- `parseInt()` / `parseFloat()`
-
-### ⚙️ Utilidades
-
-- `typeof` -> verifica o tipo
-- `isNaN()` -> verifica se não é número
-- `Math.random()`, `Math.floor()`, `Math.ceil()`
-- `Date()` -> cria data/hora atual
-
----
-
-## 📐 Math.js - Recursos úteis
-
-- `math.add(a, b)`
-- `math.subtract(a, b)`
-- `math.multiply(a, b)`
-- `math.divide(a, b)`
-- `math.evaluate("expressão")`
-- `math.mean([valores])`
-- `math.sqrt(n)`
-- `math.pow(base, expoente)`
-- `math.round(valor, casas)`
+- **HTML5 & CSS3**: Estrutura e estilização personalizada com animações.
+- **JavaScript (Vanilla)**: Lógica do editor, manipulação de DOM e gerenciamento de temas.
+- **[Math.js](https://mathjs.org/)**: Motor para cálculos complexos e manipulação de unidades.
+- **[Highlight.js](https://highlightjs.org/)**: Para deixar os blocos de código legíveis e coloridos.
+- **[CodeMirror](https://codemirror.net/)**: Integração preparada para o editor de texto (v5
