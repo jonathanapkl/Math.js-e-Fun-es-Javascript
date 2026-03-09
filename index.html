@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recursos do Math.js e Funções</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai-sublime.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.1/lib/browser/math.js"></script>
+    <link rel="icon" type="image/png" href="/Site Math/favicon-32x32.png" />
+    <!-- Importando CodeMirror e tema -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+<!-- Addons de autocomplete -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/javascript-hint.min.js"></script>
+  </head>
+  <body>
+  <button id="toggle-tema" class="botao-h2">Alternar Tema</button>
+  <button id="resetar-rel" class="botao-h2">Resetar Relógio</button>
+    <div id="digital-clock" class="digital-clock fade-in"></div>
+    <h1 class="caixa-titulo">
+      Recursos do Math.js + Funções importantes em Javascript
+    </h1>
+
+    <div class="h2-com-botao">
+      <h2>🧮 Exemplo de Código com Math.js</h2>
+      <a href="/Site Math/site/opcoescodigo.html" class="botao-h2"
+        >Ver mais Opções</a
+      >
+    </div>
+
+    <pre><code class="language-javascript">
+      const math = require('mathjs');
+      console.log("Soma: ", math.add(10, 5));                  == 15
+      console.log("Multiplicação: ", math.multiply(4, 7));     == 28
+      console.log("Expressão: ", math.evaluate('2 + 3 * 4'));  == 14
+      console.log("Média: ", math.mean([3, 6, 9]));            == 6
+      console.log("Divisão: ", math.divide(10, 2));            == 5
+</code></pre>
+<button class="copiar-btn">Copiar</button>
+    <hr />
+
+    <h2>🧪 Editor Interativo com Math.js e JavaScript</h2>
+    <div class="editor-container">
+      <textarea id="editor" rows="10" spellcheck="false" placeholder="Digite seu exemplo de código"></textarea>
+      <button id="fechar-fullscreen" class="fechar-fullscreen">✖</button>
+      <button class="butao-executar-codigo" onclick="executarCodigo()">
+        Executar
+      </button>
+      <button class="toggle-fullscreen" title="Tela cheia"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16">
+      <path d="M1 1h5v2H3v3H1V1zm10 0h5v5h-2V3h-3V1zm5 10v5h-5v-2h3v-3h2zM1 11h2v3h3v2H1v-5z"/>
+    </svg></button>
+    </div>
+    <pre id="resultado"></pre>
+
+    <div class="h2-com-botao">
+      <h2>🧰 Funções comuns em JavaScript</h2>
+      <a href="/Site Math/site/opcoesfuncoes.html" class="botao-h2"
+        >Ver mais Opções</a
+      >
+    </div>
+    <section class="atalhos-section">
+      <div class="atalho-bloco">
+        <h3>🔤 Manipulação de Strings</h3>
+          <ul>
+            <li>
+              <code>.split(",")</code> → Divide uma string com base em um
+              separador <br /><small
+                >Exemplo: <code>"a,b,c".split(",")</code> →
+                <strong>["a", "b", "c"]</strong></small
+              >
+            </li>
+            <li>
+              <code>.trim()</code> → Remove espaços em branco do início e fim
+              <br /><small
+                >Exemplo: <code>" oi ".trim()</code> →
+                <strong>"oi"</strong></small
+              >
+            </li>
+            <li>
+              <code>.toLowerCase()</code> → Converte para minúsculas <br /><small
+                >Exemplo: <code>"OI".toLowerCase()</code> →
+                <strong>"oi"</strong></small
+              >
+            </li>
+            <li>
+              <code>.toUpperCase()</code> → Converte para maiúsculas <br /><small
+                >Exemplo: <code>"oi".toUpperCase()</code> →
+                <strong>"OI"</strong></small
+              >
+            </li>
+            <li>
+              <code>.replace("a", "x")</code> → Substitui parte da string
+              <br /><small
+                >Exemplo: <code>"abc".replace("a", "x")</code> →
+                <strong>"xbc"</strong></small
+              >
+            </li>
+            <li>
+              <code>.includes("gpt")</code> → Verifica se contém substring
+              <br /><small
+                >Exemplo: <code>"chatgpt".includes("gpt")</code> →
+                <strong>true</strong></small
+              >
+            </li>
+            <li>
+              <code>.substring(0, 4)</code> → Retorna parte da string <br /><small
+                >Exemplo: <code>"javascript".substring(0, 4)</code> →
+                <strong>"java"</strong></small
+              >
+            </li>
+          </ul>
+      </div>
+
+      <div class="atalho-bloco">
+        <h3>🧱 Manipulação de Arrays</h3>
+        <ul>
+          <li>
+            <code>.push(3)</code> → Adiciona elemento no final <br /><small
+              >Exemplo: <code>[1, 2].push(3)</code> →
+              <strong>[1, 2, 3]</strong></small
+            >
+          </li>
+          <li>
+            <code>.pop()</code> → Remove o último elemento <br /><small
+              >Exemplo: <code>[1, 2, 3].pop()</code> → <strong>[1, 2]</strong>,
+              retorna <strong>3</strong></small
+            >
+          </li>
+          <li>
+            <code>.shift()</code> → Remove o primeiro elemento <br /><small
+              >Exemplo: <code>[1, 2, 3].shift()</code> →
+              <strong>[2, 3]</strong>, retorna <strong>1</strong></small
+            >
+          </li>
+          <li>
+            <code>.unshift(1)</code> → Adiciona ao início <br /><small
+              >Exemplo: <code>[2, 3].unshift(1)</code> →
+              <strong>[1, 2, 3]</strong></small
+            >
+          </li>
+          <li>
+            <code>.map(x => x * 2)</code> → Aplica função a cada elemento
+            <br /><small
+              >Exemplo: <code>[1, 2].map(x => x * 2)</code> →
+              <strong>[2, 4]</strong></small
+            >
+          </li>
+          <li>
+            <code>.filter(x => x > 1)</code> → Filtra elementos pela condição
+            <br /><small
+              >Exemplo: <code>[1, 2, 3].filter(x => x > 1)</code> →
+              <strong>[2, 3]</strong></small
+            >
+          </li>
+          <li>
+            <code>.reduce((a, b) => a + b)</code> → Reduz a um valor
+            <br /><small
+              >Exemplo: <code>[1, 2, 3].reduce((a, b) => a + b)</code> →
+              <strong>6</strong></small
+            >
+          </li>
+          <li>
+            <code>.forEach(x => console.log(x))</code> → Executa para cada item
+            <br /><small
+              >Exemplo: <code>[1, 2].forEach(x => console.log(x))</code> →
+              imprime <strong>1</strong> e <strong>2</strong></small
+            >
+          </li>
+          <li>
+            <code>.includes(2)</code> → Verifica presença <br /><small
+              >Exemplo: <code>[1, 2, 3].includes(2)</code> →
+              <strong>true</strong></small
+            >
+          </li>
+          <li>
+            <code>.indexOf(2)</code> → Retorna índice <br /><small
+              >Exemplo: <code>[1, 2, 3].indexOf(2)</code> →
+              <strong>1</strong></small
+            >
+          </li>
+          <li>
+            <code>.slice(0, 2)</code> → Corta parte <br /><small
+              >Exemplo: <code>[1, 2, 3].slice(0, 2)</code> →
+              <strong>[1, 2]</strong></small
+            >
+          </li>
+          <li>
+            <code>.splice(1, 1)</code> → Adiciona ou remove elementos
+            <br /><small
+              >Exemplo: <code>[1, 2, 3].splice(1, 1)</code> →
+              <strong>[1, 3]</strong>, remove <strong>2</strong></small
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="atalho-bloco">
+        <h3>🔁 Conversões</h3>
+        <ul>
+          <li>
+            <code>Number("10")</code> → Converte string para número <br /><small
+              >Exemplo: <code>Number("10")</code> → <strong>10</strong></small
+            >
+          </li>
+          <li>
+            <code>String(123)</code> / <code>123.toString()</code> → Converte
+            número para string <br /><small
+              >Exemplo: <code>String(123)</code> → <strong>"123"</strong> ou
+              <code>123.toString()</code> → <strong>"123"</strong></small
+            >
+          </li>
+          <li>
+            <code>JSON.stringify({a: 1})</code> → Objeto para string JSON
+            <br /><small
+              >Exemplo: <code>JSON.stringify({a: 1})</code> →
+              <strong>"{\"a\":1}"</strong></small
+            >
+          </li>
+          <li>
+            <code>JSON.parse('{"a":1}')</code> → String JSON para objeto
+            <br /><small
+              >Exemplo: <code>JSON.parse('{"a":1}')</code> →
+              <strong>{a: 1}</strong></small
+            >
+          </li>
+          <li>
+            <code>parseInt("10")</code> → Converte para inteiro <br /><small
+              >Exemplo: <code>parseInt("10")</code> → <strong>10</strong></small
+            >
+          </li>
+          <li>
+            <code>parseFloat("10.5")</code> → Converte para decimal <br /><small
+              >Exemplo: <code>parseFloat("10.5")</code> →
+              <strong>10.5</strong></small
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="atalho-bloco">
+        <h3>⚙️ Utilidades</h3>
+        <ul>
+          <li>
+            <code>typeof 10</code> → Verifica o tipo do dado <br /><small
+              >Exemplo: <code>typeof 10</code> →
+              <strong>"number"</strong></small
+            >
+          </li>
+          <li>
+            <code>isNaN("abc")</code> → Verifica se não é número <br /><small
+              >Exemplo: <code>isNaN("abc")</code> → <strong>true</strong></small
+            >
+          </li>
+          <li>
+            <code>Math.random()</code> → Número aleatório entre 0 e 1
+            <br /><small
+              >Exemplo: <code>Math.random()</code> →
+              <strong>0.123...</strong></small
+            >
+          </li>
+          <li>
+            <code>Math.floor(1.6)</code> → Arredonda para baixo <br /><small
+              >Exemplo: <code>Math.floor(1.6)</code> → <strong>1</strong></small
+            >
+          </li>
+          <li>
+            <code>Math.ceil(1.2)</code> → Arredonda para cima <br /><small
+              >Exemplo: <code>Math.ceil(1.2)</code> → <strong>2</strong></small
+            >
+          </li>
+          <li>
+            <code>new Date()</code> → Cria data/hora atual <br /><small
+              >Exemplo: <code>new Date()</code> →
+              <strong>Wed Jun 25 2025 16:02:00</strong></small
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+    <hr />
+
+    <section class="bloco-math-recursos">
+      <div class="h2-com-botao">
+        <h2>📐 Math.js - Recursos úteis</h2>
+        <a href="/Site Math/site/opcoesrecursos.html" class="botao-h2"
+          >Ver mais Opções</a
+        >
+      </div>
+      <table class="tabela-math">
+        <thead>
+          <tr>
+            <th>Função</th>
+            <th>Descrição</th>
+            <th>Exemplo</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>math.add(a, b)</code></td>
+            <td>Soma dois valores</td>
+            <td><code>math.add(2, 3)</code></td>
+            <td><code>5</code></td>
+          </tr>
+          <tr>
+            <td><code>math.subtract(a, b)</code></td>
+            <td>Subtrai dois valores</td>
+            <td><code>math.subtract(5, 2)</code></td>
+            <td><code>3</code></td>
+          </tr>
+          <tr>
+            <td><code>math.multiply(a, b)</code></td>
+            <td>Multiplica dois valores</td>
+            <td><code>math.multiply(2, 3)</code></td>
+            <td><code>6</code></td>
+          </tr>
+          <tr>
+            <td><code>math.divide(a, b)</code></td>
+            <td>Divide dois valores</td>
+            <td><code>math.divide(6, 2)</code></td>
+            <td><code>3</code></td>
+          </tr>
+          <tr>
+            <td><code>math.evaluate()</code></td>
+            <td>Avalia uma expressão</td>
+            <td><code>math.evaluate("2 + 3")</code></td>
+            <td><code>5</code></td>
+          </tr>
+          <tr>
+            <td><code>math.mean()</code></td>
+            <td>Calcula a média</td>
+            <td><code>math.mean([1,2,3])</code></td>
+            <td><code>2</code></td>
+          </tr>
+          <tr>
+            <td><code>math.sqrt(n)</code></td>
+            <td>Raiz quadrada</td>
+            <td><code>math.sqrt(16)</code></td>
+            <td><code>4</code></td>
+          </tr>
+          <tr>
+            <td><code>math.pow(base, exp)</code></td>
+            <td>Potência</td>
+            <td><code>math.pow(2, 3)</code></td>
+            <td><code>8</code></td>
+          </tr>
+          <tr>
+            <td><code>math.round(val, casas)</code></td>
+            <td>Arredonda valor</td>
+            <td><code>math.round(1.567, 2)</code></td>
+            <td><code>1.57</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="download-container">
+      <li>
+        <a
+          href="Site Math/Resumo De Math.js e Funções JS.pdf"
+          class="download-link"
+          download
+          >Baixar PDF do Resumo</a
+        ><br /><br />
+      </li>
+      <li>
+        <a href="/Site Math/Mathsefuncoes_JS.md" class="download-link" download
+          >Baixar Arquivo MD</a
+        ><br /><br />
+      </li>
+    </div>
+    <ul class="link-list">
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0DTB3QCS5/ref=ox_sc_act_image_29?smid=A2EB9PYM83FCP9&th=1"
+          >SCUF VALOR PRO Wired Performance Xbox Controller</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0D5BCYL39/ref=ox_sc_act_title_7?smid=A26NAUR9QEYTC5&th=1"
+          >Ajazz Aj159 Apex</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0CQM7V6TD/ref=ox_sc_act_title_8?smid=A286MJTJUQQE82&th=1"
+          >Attack Shark Ajazz AK820 75% Teclado mecânico para jogos</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0D2LPLTJ8/ref=sw_img_1?smid=A1OCR6ZHFC31AX&psc=1"
+          >Caixa de Som, JBL, Xtreme 4</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/Xbox-MSEP200692-X-1TB-Digital/dp/B0DCD9LGHY/ref=sr_1_2?dib=eyJ2IjoiMSJ9.KlMtsw-bnKEfEXw_-X-Qp9hP3bKe9T3BNzLddBqys-a4HrZA8Pt1J1lnAbHOL0kpFrfwF6ar4PFpxG9-eJr_myrXcuyjMhkIfxUWCm4GKs-eA8dEuqkw8MrGhSYNHM_z6A9RXIn_7Sy2gHEOQnNTP5gDo0rGne-4FFg7v42nR8mxyVCxAAaUM7X41e75eRRKWXSxRYlRcvNAyK8c1VZp5G0FB3GGBRLvffVUZ2AEo4TDK5AoQ_zSwpihjIB6QHaG39-7aNAtVtEXeJlnwWkMiEKAuFTJguY64LB8TAmGriQ.AIk_5F-QwSiiiIC3C0LNPqsinshSrd_jPdz8xpzx8WQ&dib_tag=se&keywords=xbox%2Bseries%2Bx&qid=1750174660&sr=8-2&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&th=1"
+          >Xbox Series X – 1TB Digital Edition</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/Smartphone-Samsung-Galaxy-Selfie-1-120Hz/dp/B0CQD9VK7X/ref=sr_1_1_sspa?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1KA86UD7XNBFN&dib=eyJ2IjoiMSJ9.71nyBMeNVAhspNAiSUCz2DwAnsYsy6dsSPps2iMeXymPY5FBkn88iCjT_xqBUWmN_ZqBd8c0Qq_HMGjnyqtOYoucp4J6F5NrIt5T68S9s0qUuV6YJl3Y_pG2u429oj1XzuioDVgxuSCEqG-76-Gvl9keodWfYOqltZXdjppQS-C-JvLSKVC_iL13hMubGDuDUNuUUN9aRUeoJEtT2BrOr9Zj7RWEafuOFSWut4mji0tf5DMp51siz1NnDJWH0ffyxplUhwc5GVR9VJvQh1JIkdLfMhfvLUHUBIsYaHky_OM.Y8ppt61D6nQqZj_Ut7jcdbhovXX6ZPhhewn9VEObsIc&dib_tag=se&keywords=s%2B25%2Bultra&qid=1750353267&sprefix=s%2B25%2Bult%2Caps%2C278&sr=8-1-spons&ufe=app_do%3Aamzn1.fos.9e6a115c-05b9-4b96-8e1c-b1f9ce2ac1a6&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"
+          >Smartphone Samsung Galaxy S24 Ultra</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0CQ3NL4QG/ref=ox_sc_saved_title_5?smid=A10PZDJGAVYZHY&psc=1"
+          >PDP Victrix Pro BFG Wireless Controller</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B095YLWM6C/ref=ox_sc_act_title_40?smid=A3CWTEU9ZAUJMV&psc=1"
+          >Cabo Bluetooth sem fio da KZ, módulo Bluetooth</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0CDZV5ZK3/ref=ox_sc_act_title_43?smid=A3QNYIWXAQI2H7&psc=1"
+          >FIFINE Interface de áudio USB para gravação</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B08TLZ8Z4F/ref=ox_sc_act_title_26?smid=A1ZZFT5FULY4LN&th=1"
+          >Mouse Gamer Sem Fio Logitech G PRO X SUPERLIGHT com Tecnologia
+          LIGHTSPEED</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0DSFWZWNF/ref=ox_sc_act_title_20?smid=A372OMKTW98U0Q&th=1"
+          >REDMAGIC 10 Pro 144Hz Gaming Phone</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B08MJJ7ZHR/ref=ox_sc_act_title_1?smid=A1DMPFZAJ8GZ90&psc=1"
+          >FIFINE Webcam 1440P</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0CDZV5ZK3/ref=ox_sc_act_title_2?smid=A3QNYIWXAQI2H7&psc=1"
+          >FIFINE Interface de áudio USB para gravação</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B08CXL3YQ8/ref=ox_sc_act_title_9?smid=A2L11RQ1SSYQB8&psc=1"
+          >Barra de luz para monitor Baseus</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0F5X3F7VB/ref=ox_sc_act_title_7?smid=A1ZZFT5FULY4LN&psc=1"
+          >FILTRO DE LINHA DPS ICLAMPER</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0CQC7DJWF/ref=ox_sc_act_title_4?smid=A286MJTJUQQE82&th=1"
+          >ATTACK SHARK Teclado mecânico de troca a quente, 75%</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/dp/B09FXG9BLR?ref=cm_sw_r_cso_wa_apan_dp_Z7BPWYTZV547ECRTBMG5&ref_=cm_sw_r_cso_wa_apan_dp_Z7BPWYTZV547ECRTBMG5&social_share=cm_sw_r_cso_wa_apan_dp_Z7BPWYTZV547ECRTBMG5&previewDoh=1&previewDohEventScheduleTesting=C&th=1"
+          >Edifier MONITOR DE ÁUDIO MR4 42W RMS BRANCO </a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/dp/B0BNCCH2GR?ref=cm_sw_r_cso_wa_apan_dp_W5PXY5FADXHDRCH94GHY&ref_=cm_sw_r_cso_wa_apan_dp_W5PXY5FADXHDRCH94GHY&social_share=cm_sw_r_cso_wa_apan_dp_W5PXY5FADXHDRCH94GHY&previewDoh=1&previewDohEventScheduleTesting=C&th=1"
+          >Toca-Discos Audio-Technica Sem Fio com acionamento automático por
+          correia</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/dp/B0C74G9RLH?ref=cm_sw_r_cso_wa_apan_dp_M4N6FG6NYP2Y14V68RJR&ref_=cm_sw_r_cso_wa_apan_dp_M4N6FG6NYP2Y14V68RJR&social_share=cm_sw_r_cso_wa_apan_dp_M4N6FG6NYP2Y14V68RJR&previewDoh=1&previewDohEventScheduleTesting=C&th=1"
+          >FIFINE Microfone para jogos XLR/USB para podcasting</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com/-/pt/dp/B0CPQYSXCW/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=34VB060TSZGJS&dib=eyJ2IjoiMSJ9.hfNQ33G_PxEQmkiD-0A_k537-2j_Bwoz2Lni9zGclmV6H06QzoMjSjPrVPj4c9SO1XmFIPEMAwBxv2TWHXr7oi1m-g2hRSKW4uSSxt-Ec4PNqMug1HxxStHyS60oL8xvOK46MQez4bOg7-UG8FctBDqrG9CmHSnGWSx4PEjX0Mq-j_8R9hoMiJLuhOF7kwP_axLiZAJ3I6ooYW4G7ojDIxJz5FFW2Zw9IL1TNUj_gb0.FRvbwTlbdH3IDfKGXMQbc2NoNHQX9h02nuwicEiVAzk&dib_tag=se&keywords=roteador%2Basus%2Brog&qid=1750780405&sprefix=roteador%2Basus%2Brog%2Caps%2C223&sr=8-1&th=1"
+          >ASUS Roteador ROG Rapture GT-BE98 PRO</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com/-/pt/dp/B09L8PCTPT/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=34VB060TSZGJS&dib=eyJ2IjoiMSJ9.hfNQ33G_PxEQmkiD-0A_k537-2j_Bwoz2Lni9zGclmV6H06QzoMjSjPrVPj4c9SO1XmFIPEMAwBxv2TWHXr7oi1m-g2hRSKW4uSSxt-Ec4PNqMug1HxxStHyS60oL8xvOK46MQez4bOg7-UG8FctBDqrG9CmHSnGWSx4PEjX0Mq-j_8R9hoMiJLuhOF7kwP_axLiZAJ3I6ooYW4G7ojDIxJz5FFW2Zw9IL1TNUj_gb0.FRvbwTlbdH3IDfKGXMQbc2NoNHQX9h02nuwicEiVAzk&dib_tag=se&keywords=roteador+asus+rog&qid=1750780405&sprefix=roteador+asus+rog%2Caps%2C223&sr=8-2"
+          >ASUS Roteador para jogos ROG Rapture WiFi 6 AX (GT-AX6000)</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com/-/pt/dp/B0BQ41N3XP/ref=sr_1_3?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=34VB060TSZGJS&dib=eyJ2IjoiMSJ9.hfNQ33G_PxEQmkiD-0A_k537-2j_Bwoz2Lni9zGclmV6H06QzoMjSjPrVPj4c9SO1XmFIPEMAwBxv2TWHXr7oi1m-g2hRSKW4uSSxt-Ec4PNqMug1HxxStHyS60oL8xvOK46MQez4bOg7-UG8FctBDqrG9CmHSnGWSx4PEjX0Mq-j_8R9hoMiJLuhOF7kwP_axLiZAJ3I6ooYW4G7ojDIxJz5FFW2Zw9IL1TNUj_gb0.FRvbwTlbdH3IDfKGXMQbc2NoNHQX9h02nuwicEiVAzk&dib_tag=se&keywords=roteador%2Basus%2Brog&qid=1750780405&sprefix=roteador%2Basus%2Brog%2Caps%2C223&sr=8-3&th=1"
+          >ASUS ROG Rapture GT6 (2PK) AX10000</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com/-/pt/dp/B09RSKVD3X/ref=sr_1_4?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=34VB060TSZGJS&dib=eyJ2IjoiMSJ9.hfNQ33G_PxEQmkiD-0A_k537-2j_Bwoz2Lni9zGclmV6H06QzoMjSjPrVPj4c9SO1XmFIPEMAwBxv2TWHXr7oi1m-g2hRSKW4uSSxt-Ec4PNqMug1HxxStHyS60oL8xvOK46MQez4bOg7-UG8FctBDqrG9CmHSnGWSx4PEjX0Mq-j_8R9hoMiJLuhOF7kwP_axLiZAJ3I6ooYW4G7ojDIxJz5FFW2Zw9IL1TNUj_gb0.FRvbwTlbdH3IDfKGXMQbc2NoNHQX9h02nuwicEiVAzk&dib_tag=se&keywords=roteador+asus+rog&qid=1750780405&sprefix=roteador+asus+rog%2Caps%2C223&sr=8-4"
+          >ASUS Roteador de jogos ROG Strix GS-AX5400</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/product/B0F4DW2SWW/ref=ox_sc_act_image_5?smid=A2BM2S8BOLZJPI&th=1"
+          >Cadeira de escritório ergonômica</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://pt.aliexpress.com/item/1005008089202611.html?srcSns=sns_WhatsApp&spreadType=socialShare&bizType=ProductDetail&social_params=21857181753&aff_fcid=c9362f6851f64651a4d8df5e55e7915b-1750732590070-07518-_mM5uIH5&tt=MG&aff_fsk=_mM5uIH5&aff_platform=default&sk=_mM5uIH5&aff_trace_key=c9362f6851f64651a4d8df5e55e7915b-1750732590070-07518-_mM5uIH5&shareId=21857181753&businessType=ProductDetail&platform=AE&terminal_id=4b4cc9450d9c43b38c5dca75cfb1f39c&afSmartRedirect=y"
+          >Ajazz ak820 max ultra</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://pt.aliexpress.com/item/1005007097840580.html?srcSns=sns_WhatsApp&spreadType=socialShare&bizType=ProductDetail&social_params=21862529866&aff_fcid=a71034a15386408e93d50ba1a81bced5-1750732617137-00362-_mKPRF6b&tt=MG&aff_fsk=_mKPRF6b&aff_platform=default&sk=_mKPRF6b&aff_trace_key=a71034a15386408e93d50ba1a81bced5-1750732617137-00362-_mKPRF6b&shareId=21862529866&businessType=ProductDetail&platform=AE&terminal_id=4b4cc9450d9c43b38c5dca75cfb1f39c&afSmartRedirect=y"
+          >Ajazz aj159 apex</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://pt.aliexpress.com/item/1005008509631500.html?spm=a2g0o.productlist.main.1.21407zmL7zmLVz&algo_pvid=f7e426a2-cd15-46cf-8ea8-da35e7126fc3&algo_exp_id=f7e426a2-cd15-46cf-8ea8-da35e7126fc3-0&pdp_ext_f=%7B%22order%22%3A%22765%22%2C%22eval%22%3A%221%22%7D&pdp_npi=4%40dis%21BRL%2124.17%2113.35%21%21%2129.87%2116.50%21%402101ec1a17508657972906853e24be%2112000045485041480%21sea%21BR%212040985181%21ABX&curPageLogUid=z51stwthYenH&utparam-url=scene%3Asearch%7Cquery_from%3A"
+          >Fita de teclado mecânico</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://pt.aliexpress.com/item/1005007162424963.html?spm=a2g0o.productlist.main.1.211fPKvtPKvtl1&algo_pvid=afd757b2-b398-4bae-b010-c2a5370149d9&algo_exp_id=afd757b2-b398-4bae-b010-c2a5370149d9-0&pdp_ext_f=%7B%22order%22%3A%22721%22%2C%22eval%22%3A%221%22%7D&pdp_npi=4%40dis%21BRL%2136.60%2124.38%21%21%2145.23%2130.12%21%402101e7f617508655989594099e221a%2112000040073690004%21sea%21BR%212040985181%21ABX&curPageLogUid=Yl0AiNFTfLgH&utparam-url=scene%3Asearch%7Cquery_from%3A"
+          >Cabo Aviador customizável para teclado mecânico</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/PlayStation-1000046552-Console-PlayStation%C2%AE5-Pro/dp/B0DH8J5YGH/ref=sr_1_2?crid=F18C3MKYWFVJ&dib=eyJ2IjoiMSJ9.ta9sC51tBM6I_dXuFpzi9DaMH_WSC7hkpQcaUbcz3WeBnaMf5kj6VOa9QOldZyjTvShztQwPEQ9oC7pkt0iUvtKWX6pWBqROkVVo4T_8wBDuHT_P3UPqyR-nnPOnsOvhuYeBCWE4ZJdVfqalL7VTb6g_XrXDUXjOnU48ybXrUrnctU_jtC_xxzbbnA2KHeVmw7TFlHyuCdN4HaoAtElUQKAiNgV3KoEo4Rciz7sMlkz7mkz8SqlEWRRjAdgZhPENvLIzwbvrovEvCUup0loLILbGpVvFWEVct4IpV04_ql4.JOzXQnJoKxtPNpYGiaA22UrazWxjjX3cgp3fia2bbYA&dib_tag=se&keywords=playstation+5+pro&qid=1751133664&sprefix=%2Caps%2C482&sr=8-2&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >Console PlayStation 5 Pro</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/Nintendo-Console-Switch-2/dp/B0F6D7MQQB/ref=sr_1_1?crid=24XUG61XYMCKZ&dib=eyJ2IjoiMSJ9.jKsElf-dAncMD28hLkszjKDrcLksXRnUm5eMFtM0Is4U4OLARxY-L0vs2G_56r_shVNOxp6Ff5cY0ugypDKpyFqyVRC3gV-nwYmhWfxbiSB8-uw4oKG6Z9FTV2GAg_QyAAsZ-804hljIJuEyrwnn-EQDD6NwV26dUl-RGaoZ-5sw9mNPM-pyLpMHhXyxsXsnxf1TXfCP7bSz8F_-53wHJvOye2Dwj91XsDBXpEwvgasJbU_tC7O8RR5sS8YURZq5AWuppq0CvnMFjzEHZGPEl-TJTtBFAedl-s41_9ggh9s.jWYW52jWLX99mCsee45FazD8AgPlrIGfbd-6fxie9cs&dib_tag=se&keywords=switch+2&qid=1751133588&sprefix=switch%2Caps%2C200&sr=8-1&ufe=app_do%3Aamzn1.fos.a492fd4a-f54d-4e8d-8c31-35e0a04ce61e"
+          >Console Nintendo Switch 2</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/stores/page/222A71B5-85E0-41DD-944E-D0EA6EFCEDF8/?_encoding=UTF8&store_ref=SB_A06351732BHKV5F1XBVBU-A04999673PTZ6H80M3LB1&pd_rd_plhdr=t&aaxitk=1166592432d8bac5e856ad1b662532fb&hsa_cr_id=0&lp_asins=B01MXXQKGM&lp_query=switch%202&lp_slot=auto-sparkle-hsa-tetris&ref_=sbx_be_s_sparkle_dlcd_ls_dpc&pd_rd_w=UaszV&content-id=amzn1.sym.da990715-51de-4373-b8ab-d245f18f3edf%3Aamzn1.sym.da990715-51de-4373-b8ab-d245f18f3edf&pf_rd_p=da990715-51de-4373-b8ab-d245f18f3edf&pf_rd_r=29N3QENGRST4S5ZYAJZE&pd_rd_wg=VSnS0&pd_rd_r=287be184-a388-48a3-8d92-06fd595819d9"
+          >Página de Produtos Ugreen Amazon</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/stores/Anker/page/9FDAB4BE-3359-45D0-930C-564479F6C42D?lp_asin=B0DXJQT19B&ref_=ast_bln"
+          >Página de Produtos Anker Amazon</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/Anker-Laptops-Adaptador-Multiportas-Energia/dp/B0DXJQT19B/ref=sr_1_20?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1ETCTR1RXIMH9&dib=eyJ2IjoiMSJ9.IelJ7xfHkk6MBkWKTEjL-6bRqqGNot9s-axvsePFXZJ9uLDxuE0EONcbydAZzirw-8NPTSOe9nMfhzPjaMBTi0Qr8zAlQ_Xdungt1MTSgzz5zaHVHshyt58CLE2UZzSD3BF0Z1FRVTZHM8M278V-wEBWIistskHVsxAqyLVfqFKRtvkhe3oWiIflfq588_vcYon0AjzFOBIfsvd1Qiunk0s8K1KoRm8-aC4tibUwC_a5-Xu4csnqZc8RMMj_pYGAp5qHcWGQcvgCDliiPnh1xy-KwxLaKAMkXdJDZPXYBU4.urfRcyVol6wzngNfQ-SaSMPA7sgfMY6BrHmS1nCqZ08&dib_tag=se&keywords=anker&qid=1751134019&sprefix=anke%2Caps%2C499&sr=8-20&ufe=app_do%3Aamzn1.fos.fcd6d665-32ba-4479-9f21-b774e276a678"
+          >Anker Hub USB C 7 em 1 para Laptops</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/747550/placa-de-video-rtx-5060-ti-gaming-oc-16g-gigabyte-nvidia-geforce-16gb-gddr7-128bits-rgb-dlss-ray-tracing-gv-n506tgaming-oc-16gd"
+          >Placa de Vídeo RTX 5060 Ti</a
+        ><br />
+      </li>
+
+      <li>
+        <a href="https://www.kabum.com.br/monte-seu-pc/JonathanJorge"
+          >PC Montado Jonathan Jorge</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/ASUS-Swift-Monitor-polegadas-PG32UCDM/dp/B0CV26XVMD/ref=sr_1_7?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=O5Z1X4U098PY&dib=eyJ2IjoiMSJ9.HbuPjHCHmyQeUdQnyjOVZHNkhpRP63Ej4pg_QRI4VZBEFtkLHyTrPxVDGtu1BTq3_ri837Q-i_gkHbBbsHDQJSDy5mTFFdlW83EMWHXji98b3w2sK6WnhdKau_mx2yqhVmknJrIYLsLgO9uz3A80kz_OZ4jq1ab7ZiP9nt3wH4Nz_RrJzqxRcrNqRzLHC4vKf5aIQ3lr5LHSHsvLD3-hUCu_jHe_CmpqCG5qZOvlA-nqGiJmwYNbaXMqJpz8cSQ-En9jvtZrO37e4b9bQLj9gtZY_tVeowbfpXEmPEQX6qk.gJFOND3ko9pd_7DO85V5yYaEmuL7WzGrE1BRHvoDCjs&dib_tag=se&keywords=rog+monitor&qid=1751210948&sprefix=rog+monitor%2Caps%2C294&sr=8-7&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >ASUS ROG Swift Monitor de jogos OLED 4K de 32 polegadas</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/JSAUX-ancoragem-compat%C3%ADvel-Ethernet-carregamento/dp/B0DBLP2438/ref=sr_1_16?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1YNZYCYBJL1H7&dib=eyJ2IjoiMSJ9.SEElmqi-_UrK8J0IJe20zUX18Oz33SI5PqtylbJN0opBZYzoH262go_WAydW--AmxNmyDFihgxRu-Uybc2OtPks0ufhtd5of343dFhgHWy1wCgFCFhEhBDERWs86ZsxMrvSS6TRNa1oAwjq95Ofqp8BQm1ifIcd3Obcn8Fi34-jgn-eCWBKtCWTpqkUTuOqVVOTHF8640e00fPvgRLxBURTc-oPTv2CLdk7kZMRiKUnwWHOASleZI_4MK64d9utf6xClRQNaGVm0rQN_Kj2nHzt_zehB1YbuxeweLCxkh8w.6aXuveUU8pUetoayOiNIwo02a1K9n5DhcTUGj6SZ2_M&dib_tag=se&keywords=rog&qid=1751211058&sprefix=rog%2Caps%2C268&sr=8-16&ufe=app_do%3Aamzn1.fos.4bb5663b-6f7d-4772-84fa-7c7f565ec65b&th=1"
+          >JSAUX Estação de ancoragem compatível ROG</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/Notebook-G835LX-NVIDIA-RTX5090-Windows/dp/B0F9HTGH3V/ref=sr_1_11?crid=TT8O3RON8HC2&dib=eyJ2IjoiMSJ9.r_F9Y2J-gfP2cZn7YB0TGBmBRbTBMnYOeZVYhajveqbk1PPjNxokjdCACLgzSr1v7pcJF8hlQIK6nMka4tEvxqhk7Qrf-ct4HjtUi6NzX5GMWFe-fY8sSdV9WOvcaYfIA4Ku1jLgi5EhuA9rWL0ZwuB_P2fU0Vw6GFFQLLhGMdEv-FnM1Nm126sFsment7YYrG_kn0f-7YhmXw2hXsrZ7YMPjNdDSa1qsmMmP_blNDlOTj0c3eVpTl-h56k6LcG19hxb0vO7CLx8Hc5XF5xhhlt4nFS8TjhG0nbJncwrSZ4.Ppz_hAk2YI5TD3K6X1Vz_0tQSJ8NrUjpvyGOdPbwAg0&dib_tag=se&keywords=asus+rog+notebook&qid=1751211362&sprefix=asus+rog+note%2Caps%2C189&sr=8-11&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >Notebook Gamer ROG Strix Scar</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/ASUS-ROG-NH04-ACE-superf%C3%ADcie/dp/B0CLHLLQ6P/ref=sr_1_19?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=IWUDOAFZ127G&dib=eyJ2IjoiMSJ9.SEElmqi-_UrK8J0IJe20zUX18Oz33SI5PqtylbJN0opsOzkljPdePcLaig-jI1RphSgGFUpNtMYE5-7wIaL3YHUhBGZLWBdS7C5bvbjbEhO3GwmvwYe5qDmr2pkMQORcabDyF7jv-KPMZ1u1yETAZPOZDPU8D7XAhTgzV2svslmq5kxW8V1n_feVlKcyN91fZu0Ry4lVXmu7BfO20ymT95O8zcY1kmhLeAnJbYbZC9EmOCQqgJUcVWaP-s8TtuPsnYdsA5ilf0JWGqeF3SOfAWxihJpR53S8eEjAJFyW8Cs.9r3DBglU75nBUySCrW2gpKJxKVIJ_aUE9RbQMaeY2no&dib_tag=se&keywords=asus%2Brog&qid=1751211434&sprefix=asus%2Brog%2Caps%2C239&sr=8-19&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&th=1"
+          >ASUS ROG NH04 ROG Moonstone ACE Mouse pad para jogos</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/ASUS-XG27UCG-W-Configura%C3%A7%C3%A3o-antecipada/dp/B0D6C4316S/ref=sr_1_16?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HU0055IBU8AO&dib=eyJ2IjoiMSJ9.HbuPjHCHmyQeUdQnyjOVZHNkhpRP63Ej4pg_QRI4VZAB87EY4s9MdPM3oAstqrbRwOKClDP0hgsA906ISeeWHkGFs3oF1CyQAykMjqc5z-TnjW1UPYQI-E2QJnBdUp9NSvdUJjhv2To_R8mzCVMWlSlVkZvRnkUv7AV_8Uy8JZNc-zg_7I8yuAx2TBvHgc-Uh6PU3_acsBldVoqBuDLV7MSM_5DAma6Eg1Qg7G3BQey7_NFS_-72JOQ1_Huz7DEZsiwEWWpizRjurWJgYmD6LhQ2Bw1iKvPZQj1U517oPeY.-KnkBQ7bI12Ftv33uBJfxow2kuoUIURbIkkAB4DR0vU&dib_tag=se&keywords=asus+rog+monitor&qid=1751211554&sprefix=asus+rog+monitor%2Caps%2C199&sr=8-16&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >ASUS Monitor Configuração antecipada XG27UCG-W</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/gera%C3%A7%C3%A3o-GeForce-gr%C3%A1ficos-discretos-ilumina%C3%A7%C3%A3o/dp/B0DBBVNJ7H/ref=sr_1_46?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=IWUDOAFZ127G&dib=eyJ2IjoiMSJ9.SEElmqi-_UrK8J0IJe20zUX18Oz33SI5PqtylbJN0opsOzkljPdePcLaig-jI1RphSgGFUpNtMYE5-7wIaL3YHUhBGZLWBdS7C5bvbjbEhO3GwmvwYe5qDmr2pkMQORcabDyF7jv-KPMZ1u1yETAZPOZDPU8D7XAhTgzV2svslmq5kxW8V1n_feVlKcyN91fZu0Ry4lVXmu7BfO20ymT95O8zcY1kmhLeAnJbYbZC9EmOCQqgJUcVWaP-s8TtuPsnYdsA5ilf0JWGqeF3SOfAWxihJpR53S8eEjAJFyW8Cs.9r3DBglU75nBUySCrW2gpKJxKVIJ_aUE9RbQMaeY2no&dib_tag=se&keywords=asus%2Brog&qid=1751211434&sprefix=asus%2Brog%2Caps%2C239&sr=8-46&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&th=1"
+          >ROG NUC 970 Full System Mini PC</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://www.amazon.com.br/ASUS-Microfone-ROG-condensadora-cardioide/dp/B0CVB1WMFG/ref=sr_1_43?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=IWUDOAFZ127G&dib=eyJ2IjoiMSJ9.SEElmqi-_UrK8J0IJe20zUX18Oz33SI5PqtylbJN0opsOzkljPdePcLaig-jI1RphSgGFUpNtMYE5-7wIaL3YHUhBGZLWBdS7C5bvbjbEhO3GwmvwYe5qDmr2pkMQORcabDyF7jv-KPMZ1u1yETAZPOZDPU8D7XAhTgzV2svslmq5kxW8V1n_feVlKcyN91fZu0Ry4lVXmu7BfO20ymT95O8zcY1kmhLeAnJbYbZC9EmOCQqgJUcVWaP-s8TtuPsnYdsA5ilf0JWGqeF3SOfAWxihJpR53S8eEjAJFyW8Cs.9r3DBglU75nBUySCrW2gpKJxKVIJ_aUE9RbQMaeY2no&dib_tag=se&keywords=asus+rog&qid=1751211434&sprefix=asus+rog%2Caps%2C239&sr=8-43&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >ASUS Microfone ROG Carnyx USB para jogos</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://support.arturia.com/hc/en-us/articles/4411369571090-MiniFuse-1-MiniFuse-Control-Center"
+          >Arturia MiniFuse 1 - MiniFuse Control Center</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/Leitor-De-Cart%C3%A3o-OTG-6-Em-1-USB-Type-C-Micro-Para-USB3.0-TF-Adaptador-SD-Flash-Drive-Mini-C%C3%A2mera-De-Telefone-i.1006215031.25333130587?xptdk=9c679e20-011d-4213-9950-a91fe9bd1fca"
+          >Leitor De Cartão OTG 6 Em 1 USB Type C</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/HP-Pen-Drive-2TB-Metal-USB-3.0-%C3%80-Prova-D'%C3%A1gua-De-Alta-Velocidade-U-Disk-Flash-OTG-Fornece-Um-Adaptador-Gratuito-i.1389143426.26067757495?xptdk=f17390f3-7d2e-4cee-9feb-365fac590cbd"
+          >HP Pen Drive 2TB Metal USB 3.0</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/-Bemtevi-Smartwatch-IWO-T800-Series-9-Ultra-2-Calculadora-Card%C3%ADaca-Monitoramento-Da-Frequ%C3%AAncia-NFC-Rel%C3%B3gio-Inteligente-i.1059913458.23292242965?xptdk=3bd3cf7c-d43e-4e08-ad1e-0276f8063ffd"
+          >Smartwatch IWO T800 Series 9 Ultra 2 </a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/Repetidor-Amplificador-De-Sinal-Wifi-1200-mbps-Ultra-R%C3%A1pido-sinal-forte-110v-220v-G8-i.1217782773.22097785703?xptdk=e83bea12-c663-4f6c-929c-26a12db7c067"
+          >Repetidor Amplificador De Sinal</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/Entrega-24H-!-Lte-Usb-Dongle-Modem-WIFI-4g-Roteador-Sem-Fio-150Mbps-Cart%C3%A3o-Sim-i.746806961.22804988136?xptdk=94963145-2e44-4884-9c7a-cd863b05a79a"
+          >Usb Dongle Modem WIFI 4g Roteador Sem Fio</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/C%C3%B4moda-136cm-com-6-Gavetas-Flex-Multim%C3%B3veis-MP4275-i.308628919.23797969922?xptdk=fd5fbb41-a01c-4c2b-9f49-00b6c67b8bf0"
+          >Cômoda 136cm com 6 Gavetas</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/Guarda-Roupa-Solteiro-Treviso-4-PT-6-GV-Preto-i.1226120317.22493414218?xptdk=946f6506-6c22-42bd-abbf-a932139a3476"
+          >Guarda-Roupa Solteiro Treviso 4 PT 6 GV Preto</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/Cintur%C3%A3o-Fitness-Rudel-102-Blackbull-i.805706766.22092150368?xptdk=30ae403f-1981-4489-9ab5-75522466e36d"
+          >Cinturão Fitness Rudel-102 Blackbull</a
+        ><br />
+      </li>
+
+      <li>
+        <a
+          href="https://shopee.com.br/LAFVIN-UNO-R3-Projeto-Kit-De-Carro-Rob%C3%B4-Inteligente-ESP32-WIFI-Rob%C3%B3tico-E-Educacional-Para-De-Brinquedo-Arduino-i.955257877.20073476941?xptdk=0ce62cf1-631b-4280-8e10-9384c3207342"
+          >LAFVIN UNO R3 Projeto Kit De Carro Robô Inteligente </a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/Bicicleta-Aro-29-GT-Sprint-MX7-24V-index-Freio-Disco-Alum%C3%ADnio-Suspens%C3%A3o-Aero-MTB-i.912905460.16892189215?xptdk=c3e5ba9f-9d8e-4a8c-82f2-5bbcc7134dbc"
+          >Bicicleta Aro 29 GT Sprint MX7 24V</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Reborn-Ethernet-20-velocidade-resistente/dp/B0DGPL1F3V/ref=sr_1_5?crid=1UKQDIBVI2I6K&dib=eyJ2IjoiMSJ9.-ZQACtBZgk1wN4CW1xv_hYWJor8_nlnjn8yfwGwu2YHO0iNlw8cGRwcBSLIgRECFyLfn3awj7t4RfukwTBry4nGFZzejPErO6GbPfLc1TyRhmgHoPD1sCOplHlwMGjpPDT2Af7aKHNdNRuovhW1c7_LS6bszCOqNaopEZPhAZm0FYiGNzkZcXS8l5sjdSo-_6nrdG4FPZQFQ5HOVqSHQq0UwzUle7jnGfqK5hYR8dh8WTq2CPZIc4UVtcjWaayFJoZ1wbedJQLuVC8OEkG0vp3jbj4atIzuipxai5l-WmzA.sY_fAMc2RVrs2Ba3qREQjABKmR9RPgvF6nEwXXjAM7M&dib_tag=se&keywords=cabo+ethernet+cat+8+20m&qid=1751480688&sprefix=cabo+ethernet+cat+8%2Caps%2C243&sr=8-5&ufe=app_do%3Aamzn1.fos.6a09f7ec-d911-4889-ad70-de8dd83c8a74"
+          >Cabo Ethernet Cat 8 de 20 m</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/GUB-PLUS-Rotatable-Anti-slip-Motorcycle-Bike-Phone-Holder-Bracket-i.1006215031.29855035376?xptdk=74839972-5ae3-48c4-aae5-a837888d92e6"
+          >Suporte de Celular para Biscicleta</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/Bicicleta-Eletr%C3%B4nica-Buzina-De-Alerta-Alto-Som-120dB-IPX4-%C3%80-Prova-D'%C3%A1gua-Adequada-Para-De-Estrada-E-Montanha-i.1006215031.25225852189?xptdk=63dc019e-b0dc-4bf2-b682-0cfe7d7cdc3e"
+          >Buzina Eletrônica para Biscicleta</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/Conjunto-de-Chaves-de-Fenda-de-Precis%C3%A3o-44-em-1-para-Reparo-de-Eletr%C3%B4nicos-Computador-e-Rel%C3%B3gios-i.1006215031.25526210528?xptdk=4c1a773d-9a4d-44be-9a21-c304f50aebde"
+          >Conjunto de Chaves de Fenda de Precisão 44 em 1</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/Jogo-Chaves-De-Fenda-Precis%C3%A3o-Com-115-pe%C3%A7as-1-Kit-Ferramentas-Novo-P-Manuten%C3%A7%C3%A3o-Celular-Notebook-Tablet-Repara%C3%A7%C3%A3o-i.1246432862.23293523406?xptdk=e049303d-a994-40c0-be0d-ebb812d0d5e1"
+          >Jogo Chaves De Fenda Precisão Com 115 peças 1</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/Kit-Ferramenta-Chave-Magn%C3%A9tica-Precis%C3%A3o-24-Pe%C3%A7as-Pequenos-Reparos-Iphone-Android-Pc-i.728534865.23492619475?xptdk=ff939760-5f56-44ae-ba1a-79dc883412c8"
+          >Kit Ferramenta Chave Magnética Precisão 24 Peças</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/Kit-5-Pe%C3%A7as-Canudo-Reto-Curvo-e-Escovinha-Limpeza-Inox-i.482975418.20677228329?xptdk=b5c1c5ed-70dc-455e-a954-b015103ecda0"
+          >Kit 5 Peças Canudo Reto, Curvo e Escovinha Limpeza Inox</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/Assento-De-Bicicleta-Banco-Selim-Super-Confort%C3%A1vel-Selim-Largo-Bicicleta-C-sinalizador-adesivo-Refletivo-i.1267153913.23093228814?xptdk=ae6ab01c-2eb9-4bdc-9a72-d22a37448a4a"
+          >Assento De Bicicleta Banco Selim Super Confortável</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="http://shopee.com.br/Kit-Guid%C3%A3o-Su.-Mesa-e-Dire%C3%A7%C3%A3o-Passador-Alavanca-Rapid-Fire-21V-3x7v-Descanso-Lateral-29-GTS-i.955914128.21399544463?xptdk=9f51dd7d-c6ce-48e1-801c-9c88094bdc48"
+          >Kit Guidão, Su. Mesa e Direção + Passador Alavanca + Descanso
+          Lateral</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://shopee.com.br/XOSS-NAV-GPS-Computador-De-Bicicleta-Sem-Fio-Bluetooth-ANT-Veloc%C3%ADmetro-%C3%80-Prova-D'%C3%A1gua-i.480061425.19147253628?xptdk=7bbccee2-7fd7-44a1-ba2c-2dea645fd049"
+          >Computador De Bicicleta Sem Fio Bluetooth</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/520368/processador-amd-ryzen-5-5600gt-3-6-ghz-4-6ghz-max-turbo-cache-4mb-6-nucleos-12-threads-am4-100-100001488box"
+          >Processador AMD Ryzen 5 5600GT,3.6 GHz,(4.6GHz Max Turbo)</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/474946/memoria-ram-xpg-spectrix-d35g-rgb-16gb-3200mhz-ddr4-cl16-preto-ax4u320016g16a-sbkd35g"
+          >Memória RAM XPG Spectrix D35G, RGB, 16GB, 3200MHz, DDR4</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/621162/ssd-kingston-nv3-1-tb-m-2-2280-pcie-4-0-x4-nvme-leitura-6000-mb-s-gravacao-4000-mb-s-azul-snv3s-1000g"
+          >SSD Kingston NV3, 1 TB</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/473176/gabinete-gamer-redragon-wideload-lite-mid-tower-atx-e-m-atx-lateral-e-frontal-em-vidro-temperado-branco-ca-604w"
+          >Gabinete Gamer Redragon Wideload Lite</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Galaxy-Intel%C2%AE-CoreTM-Windows-AMOLED/dp/B0CZLPP17G/ref=sr_1_4?crid=VL2TA7QRYXMI&dib=eyJ2IjoiMSJ9.-hQ5_LKxtBGGc3YMl40SMH68fbh8uoWs6UUIjdzREzI0SK_J1pKUFArCpXQMr7j-xPQF6lb2PwyTn6i1PPgkE1h7yFMP4HYJfOqDVgIVgP1Kp6QLZKZJQSYieDBctPhemp0oM__UMvgFyjc_XImR5Ixk-bhW-8m5qGn23PyevnYw9d_KuCPhXGbEBIBdnEsChbydmm0xqpE3xDSFXEYAr1IntGAvrkCisxhWQJ6mJyvWpx6V5GemggipiHtYmfC-5FpcJG54B2mpzS1rJLg7bgmhQ6AvL6mMONDD10aivmA.VaohKH9ekqjq8x1Rr8BjIIR_l_mGVvOUs3WAMxf-ZSE&dib_tag=se&keywords=notebook+tela+amoled&qid=1751779403&sprefix=notebook+amo%2Caps%2C209&sr=8-4&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >Galaxy Book4 360 Intel® Core™ 5, Windows 11 Home, 16GB, 512GB SSD</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/vapor-jet-7-football-gloves-1-pair-C04SdP/N1003505-091"
+          >Nike Vapor Jet 7.0</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/d-tack-football-gloves-1-pair-HR14vX/N1003507-102"
+          >Nike D-Tack</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/superbad-football-gloves-1-pair-2K9csm/N1009572-102"
+          >Nike Superbad</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/alpha-baseball-batting-gloves-1-pair-7H1dhZ/N1004381-126"
+          >Nike Alpha</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/alpha-kids-mouthguard-HpHLBg/N1003402-010"
+          >Nike Alpha</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/alpha-2-football-one-piece-lip-protecting-mouthguard-8ZW09h/N1012127-101"
+          >Nike Alpha 2.0</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/alpha-lip-protecting-mouthguard-ptgtN7/N1003405-101"
+        >
+          Nike Alpha</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/vapor-premier-mens-lacrosse-gloves-0WlKtK/VR3F-100"
+          >Nike Vapor Premier</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/jordan-1-low-little-big-kids-cleats-jq9kN3/HF6885-100"
+          >Jordan 1 Low</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/alpha-menace-4-varsity-football-cleats-MrVw2K/FN0027-002"
+          >Nike Alpha Menace 4 Varsity</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.nike.com/t/diamond-turf-93-td-football-shoes-qMQ9NS/HF5298-101"
+          >Nike Diamond Turf 93 TD</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/GX40Q17229/dp/B075Y6Y9H5/ref=sr_1_43?crid=3SD4V7GL3N97S&dib=eyJ2IjoiMSJ9.2OIJMBjejcyq_OYXyNr9JwLjqM2A1GOwqacqvLERD5gnumyx3FJArwPbuiogtCYqkGVPniBUXVl-sDevDpbg5p5CJENcNs9clg2iYiFIkoYD_RximGME9guWvNdNzURPVvMz9hqzvdklB-4BBo0YY4mzRLZ11uksK6kQK2QaHC5PACd3Pyq0QMOsN_ei0-0rCCX6lAZJeT45mhhL4WrwK_tV5vmEiKggmYGsSc7lgpbRWFJPHehbrSXg9CAjXNz9nY3mypGZdsdJ9ApZ-RjNduBhk7STN62brcjKUXWdWTw.UtldZk9mBC9bmxY4Lct8l2HkJuD4NMSxulb2TH_X9pU&dib_tag=se&keywords=acess%C3%B3rios%2Bpara%2Bnotebook&qid=1751907053&sprefix=acess%C3%B3rios%2Bpara%2Bno%2Caps%2C285&sr=8-43&ufe=app_do%3Aamzn1.fos.6d798eae-cadf-45de-946a-f477d47705b9&th=1"
+          >Bolsa carteiro Lenovo T210, para laptops de até 15,6", preto</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Beelink-Desktop-USB3-2-Display-Office/dp/B0DKFMNN65/?_encoding=UTF8&pd_rd_w=t4DrN&content-id=amzn1.sym.454738cc-1d38-49bf-ab88-1bd74f2484a1%3Aamzn1.symc.abfa8731-fff2-4177-9d31-bf48857c2263&pf_rd_p=454738cc-1d38-49bf-ab88-1bd74f2484a1&pf_rd_r=TXR0XTSKTF0STFSKJKNG&pd_rd_wg=1z2Up&pd_rd_r=fa719388-5bc8-4988-970c-c136f290567b&ref_=pd_hp_d_btf_ci_mcx_mr_ca_id_hp_d"
+          >Beelink Mini PC, 5650U Pro AMD Ryzen 5 (até 4,2GHz) 16GB DDR4 RAM
+          500GB M.2 NVMe SSD Mini Desktop</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Beelink-EQI12-gera%C3%A7%C3%A3o-i7-12650H-computador/dp/B0DSJ1WSZB/ref=sr_1_4_sspa?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini+pc&qid=1751997317&sprefix=mini+p%2Caps%2C475&sr=8-4-spons&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+          >Beelink Mini PC EQI12, Intel 12ª geração Core i7-12650H (10C/16T, até
+          4,7GHz), mini computador com 32GB LPDDR5 RAM 1TB</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Yxk-S15-UItra-Lake-N100-computador/dp/B0DDL944Q9/ref=sr_1_9?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini%2Bpc&qid=1751997317&sprefix=mini%2Bp%2Caps%2C475&sr=8-9&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&th=1"
+          >Yxk Mini PC S15 UItra, 12ª geração Alder Lake-N100 (até 3,4GHz), 16GB
+          DDR4 RAM 512GB M.2 SSD</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Beelink-pequeno-tripla-Thunderbolt-2-5Gbps/dp/B0D9Q7TGG4/ref=sr_1_21_sspa?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini+pc&qid=1751997317&sprefix=mini+p%2Caps%2C475&sr=8-21-spons&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1"
+          >Beelink Mini PC Core Ultra 125H SEI14 Mini PC (18M Cache, 14C/18T até
+          4,5 Ghz) PC pequeno 32GB DDR5 1TB PCIe 4.0 M.2</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/RUPA-N100-Ethernet-Computador-Escrit%C3%B3rio/dp/B0DK34K7BP/ref=sr_1_20?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini+pc&qid=1751997317&sprefix=mini+p%2Caps%2C475&sr=8-20&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >RUPA Mini PC Windows 11, N100 Mini PC 8GB DDR5 RAM 256GB 2,5''SSD</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Beelink-EQR6-computador-suporta-Gigabit/dp/B0DCVTPTNV/ref=sr_1_22_sspa?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini+pc&qid=1751997317&sprefix=mini+p%2Caps%2C475&sr=8-22-spons&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1"
+          >Beelink Mini PC EQR6 AMD Ryzen 9 6900HX (8C/16T, até 4,9GHz), SSD
+          NVMe 24GB DDR5/500GB,</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/B1-Mini-Micro-N4000-2-4GHz/dp/B0DSJ9LDTL/ref=sr_1_25?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini+pc&qid=1751997317&sprefix=mini+p%2Caps%2C475&sr=8-25&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >B1 Mini Micro Pc N4000 8GB RAM 128GB</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/AOOSTAR-Intel-256GB-Computador-Desktop/dp/B0DT47LM6S/ref=sr_1_31?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini+pc&qid=1751997317&sprefix=mini+p%2Caps%2C475&sr=8-31&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >AOOSTAR Intel Twin Lake N150 (N100) Mini PC 12GB RAM 256GB M.2 2242
+          SSD</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Touch-mini-processador-pr%C3%A9-instalado-operacional/dp/B0DGKQ959M/ref=sr_1_28?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini+pc&qid=1751997317&sprefix=mini+p%2Caps%2C475&sr=8-28&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >Mini computador Touch 2024, mini desktop PC portátil com processador
+          Intel N-Series</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/ACEMAGIC-V1-minicomputadores-gera%C3%A7%C3%A3o-computador/dp/B0DKWGXJYP/ref=sr_1_41?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MSJYDQ529WNA&dib=eyJ2IjoiMSJ9.u94M8YSCZOF9eyJ2V9qHJco4yrbV1RKe5i_niS8sXV52_ruVp8HNw0ck7KGHvzUdC8hnLBwA0Ng8E1nIQYl2vO4ghA0zQryVmo6dV7hx1kz_l580m6x7K1MU5zUKsuqC1GTfGj6O4OjMf9VjsbDGGGqe07rKnEImMabeBerXMPL57TlXlBwgaT8_M8D5hjSH5Ai7JDIyLFPP0PPJEqN53hN1LLaavW4pF3C29BNusfn87V2WDxCdyRz4vkGb5_FrHsGI3vfgEKMhx2UQ9IsQ0OxV-Tit5mT_coDbivDK0Dk.JRrUXRKPPgzFr9a6tMqAHwZF1rMKC-vzATOCINJIZGU&dib_tag=se&keywords=mini+pc&qid=1751997317&sprefix=mini+p%2Caps%2C475&sr=8-41&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >ACEMAGIC Vista V1 N97 Mini PC, 16 GB DDR4 RAM 512 GB SSD</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/escrit%C3%B3rio-ergon%C3%B4mica-reclin%C3%A1vel-computador-confort%C3%A1vel/dp/B0F4DRZMCX/ref=sr_1_6?crid=2VJDV9FF88I3R&dib=eyJ2IjoiMSJ9.eCK3YnTmX8zIUPK_Ej8bWdKai2E8u-4-tLOj05JhUwdM7NoHJoWtZztHNvLOqhLtRdi0Se3M_YxG21pn0PNhHW7cXTDvavKnzgXRK2I2YgnW7ypDbal8gdkXJREaHKqu7ISGRO5YKRVxDVYpCcE5FT8XoPJ-_dmrj_o_QZGp6RKts-ssVwOBBPhkrs1UI-C3yxg1BtmXTjLuZkmdnfsKz9lj3kppYsWnAowMi6VMmtlM7TiXQrqK-kZXijgm7l0Yse7uOadpIzlmDHJV3FIr6NkHnsBWDAhQeJe-XXkBGhI.UTW0I1XxRpeeD7NLzhIgQXatTY0d09YNEBGL9-JmqeY&dib_tag=se&keywords=cadeira%2Bergonomica&qid=1752173374&sprefix=cade%2Caps%2C262&sr=8-6&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&th=1"
+          >Cadeira de escritório ergonômica</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Galaxy-S10-Ultra-C%C3%A2mera-Frontal/dp/B0DGJ8NNYV/ref=sr_1_5?crid=2OKXS2Z48KLN6&dib=eyJ2IjoiMSJ9.VwEO-8oyf4ahRHEoNQ2aYIpup98AFvuA2GWXZoAnI-F0NcbO43InEaiaq25hSgOcBqwC-bgtYVoeWbRvV9C-bz_NdGgbbDbKbo6RJWXnVlwFwCiQstOZS6GYTCm_yWkv5vwWNiyw2-3G8eGijJJqNOrv2yeYW9JCQVXD1it5CsEJEFFVkhbAqyjTmbbacP28jPRQSjNSkx_l-MnQK-7gNtDDDNsbVNkcT87NpuPq3CGq18dBzWaDFJrV1heE7PEeJ2I3ULnEd5CfzJ1cDXA6psq3C16oyVxYXwjXIBgvHo4._VO8vKF3DqIbCoaIIqktA6RqZFPhmWKpbpOvBl8rY8E&dib_tag=se&keywords=s10+ultra&qid=1752174906&sprefix=s10%2Caps%2C912&sr=8-5&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >Galaxy Tab S10 Ultra, 512 GB</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/870973/placa-de-video-xfx-rx-9060-xt-oc-amd-radeon-16gb-gddr6-128bits-20-gbps-triple-fan-rdna-4-rx-96ts316b7"
+          >Placa de Vídeo XFX RX 9060 XT OC AMD Radeon, 16GB</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/475647/placa-de-video-rx-7600-gaming-oc-8g-amd-radeon-gigabyte-8gb-gddr6-128bits-rgb-gv-r76gaming-oc-8gd"
+          >Placa de Vídeo RX 7600 GAMING OC 8G AMD Radeon Gigabyte, 8GB</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/459144/placa-de-video-rx-7600-challenger-asrock-amd-radeon-8gb-gddr6-90-ga41zz-00uanf"
+          >Placa de Vídeo RX 7600 Challenger ASRock AMD Radeon, 8GB GDDR6</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/463543/placa-de-video-rx-7600-series-graphics-cards-xfx-amd-radeon-8gb-gddr6-rx-76pqickby"
+          >Placa de Vídeo RX 7600 Series Graphics Cards XFX AMD Radeon, 8GB
+          GDDR6</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/576423/placa-de-video-rx-7800xt-gaming-16g-xfx-speedster-qick319-amd-radeon-16gb-ddr6-hdmi-3xdp-3-fan-rx-78tqickf9"
+          >Placa de Vídeo RX 7800XT Gaming 16G XFX Speedster QICK319 AMD Radeon,
+          16GB DDR6</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.kabum.com.br/produto/734678/placa-de-video-gigabyte-rx-9060-xt-gaming-oc-amd-radeon-16gb-gddr6-128bits-triple-fan-opengl-4-6-gv-r9060xtgaming-oc-16gd"
+          >Placa de Vídeo Gigabyte RX 9060 XT Gaming OC AMD Radeon, 16GB,
+          GDDR6</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/dp/B0DFXXM38Z/?coliid=IAJ8VDIAZZ9DH&colid=9U0RULBK38KA&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it_im"
+          >GravaStar Mercury K1 Lite</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/aw/d/B0D1XLNWP2/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=7c15a6dcc7ee70366f1a4eb416b3003f&hsa_cr_id=0&qid=1754532745&sr=1-1-9e67e56a-6f64-441f-a281-df67fc737124&ref_=sbx_be_s_sparkle_dlcd_asin_0_img&pd_rd_w=SpcV6&content-id=amzn1.sym.da990715-51de-4373-b8ab-d245f18f3edf%3Aamzn1.sym.da990715-51de-4373-b8ab-d245f18f3edf&pf_rd_p=da990715-51de-4373-b8ab-d245f18f3edf&pf_rd_r=CVAWW9THJ6H890XA8SQX&pd_rd_wg=PnPjO&pd_rd_r=60c9d991-7584-4d28-941b-f1c4d7e63498"
+          >UGREEN Revodok Pro Hub USB C 6 em 1</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/aw/d/B0D1XN2LF1/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=7c15a6dcc7ee70366f1a4eb416b3003f&hsa_cr_id=0&qid=1754532745&sr=1-2-9e67e56a-6f64-441f-a281-df67fc737124&ref_=sbx_be_s_sparkle_dlcd_asin_1_img&pd_rd_w=SpcV6&content-id=amzn1.sym.da990715-51de-4373-b8ab-d245f18f3edf%3Aamzn1.sym.da990715-51de-4373-b8ab-d245f18f3edf&pf_rd_p=da990715-51de-4373-b8ab-d245f18f3edf&pf_rd_r=CVAWW9THJ6H890XA8SQX&pd_rd_wg=PnPjO&pd_rd_r=60c9d991-7584-4d28-941b-f1c4d7e63498"
+          >UGREEN Revodok Pro 6 em 1 USB C Hub</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/gp/aw/d/B0BXDQS4BD/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=7c15a6dcc7ee70366f1a4eb416b3003f&hsa_cr_id=0&qid=1754532745&sr=1-3-9e67e56a-6f64-441f-a281-df67fc737124&ref_=sbx_be_s_sparkle_dlcd_asin_2_img&pd_rd_w=SpcV6&content-id=amzn1.sym.da990715-51de-4373-b8ab-d245f18f3edf%3Aamzn1.sym.da990715-51de-4373-b8ab-d245f18f3edf&pf_rd_p=da990715-51de-4373-b8ab-d245f18f3edf&pf_rd_r=CVAWW9THJ6H890XA8SQX&pd_rd_wg=PnPjO&pd_rd_r=60c9d991-7584-4d28-941b-f1c4d7e63498"
+          >UGREEN Revodok Pro 210 USB C HUB 2 HDMI</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Yamaha-Monitor-Est%C3%BAdio-polegadas-Branco/dp/B00KDWMCB0/ref=sr_1_4?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=34I45B9SD9ZMS&dib=eyJ2IjoiMSJ9.jA0nJxfNLH72xTCFO5BNvg_OkEaZYlqePJSvwVKa0JYl-nbCMgYru-m5dugOuqCKWfn2SWCiCUViEQy6haG8TRdPoBF1ZE2Z3C-PKu-MYoSBo0SDA-pw0wxaNU21p6n1qntB0i5mRi3rUES9LNeurfBfSLtTXzDcE8xYRh9hC0PlMOcTnTntlty1nNvjU-8GSjbibM_Y9Uv6MCqprU_cxBGuUjzJ-k_d-EmbmGf8A23PyMlbgm_FwbjwBwUvezHDtrrEwvD1QvO6cpt6A2qKBycWWH0FPbeUUQi-UWFgMgw.nQ9hY9rGe5PJCnNFILQN0iD30OWGCpB7iPxSbT202KQ&dib_tag=se&keywords=yamaha+hs5&qid=1755380712&sprefix=yamaha+hs5%2Caps%2C428&sr=8-4&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >Par de Monitores de Referência Bi-Amplificado 70W HS 5 Branco
+          Yamaha</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Monitor-Referencia-Yamaha-Bi-amplificado-Branco/dp/B07RR27J1C/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.qCYhnktRHDEZB6tQvPmmQKtHvMLZLfzsKtMRhYoDvAJFpba84bzRmDargtk5LtxyMe4mL7910O9SkZ07qu4VlIl-N--tbiMlKF8mSRH8-WEIkW3wP-PCFiojYHDCMdHNybNUZGBEfqUtU84YTaO0dUMbXen58Ykv5EGZm1PIE11E07Z0oh2-Mynyn-yq-bcv_Lfhmsb3ZFc4v92djXeeXjOLlb6Z_TqfQxqSLU6dvixPyvbJF1dYlNh6bGmdDxIipK0RQbPkt_NXDqxXAp0TBh0djksB-QIe63FIzY5YBbo.mHdZoE8ogbJ5u2GclFz6wou-JwRRA1JuXtGqd8LngGU&dib_tag=se&keywords=yamaha+hs7&qid=1755380790&sr=8-2&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147"
+          >Monitor de Referência Bi-Amplificado 95W HS 7 Branco Yamaha</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/JBL-Fone-Ouvido-770NC-Bluetooth/dp/B09CYX92NB/ref=sr_1_42?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=TUN64F84T2G1&dib=eyJ2IjoiMSJ9.uIMac-dsvMgB6uM2lDeg0hdBON5mBOAhmTxhY0J0djwfngRvCriwf1YMk7ECJpt23XggOhJLe398m-Ky8nCQkg2XBuWLppeIcx9AWcmejL9GQPTHAaP5hZJlLmEhjh8dytDtPsEMrxg_LyFTHmhZavXKv-L3O9YywJLzLi64JA63Wa48cBIu8uUCcWCmnHvPrTjeSxlOXQsm7SXZw12yk4y40AoOs-M8l9n3i2_hvbuqxzrTojtYXhnBgUVXg3RhZkwO5guT5Ff_iP2DOEqOclktgGJ_X-mKr9LIfzEkiYU.Zj4Ans1ETEgbji7fGtY8p-75IlPXnTjppWoR3G2ZFTc&dib_tag=se&keywords=jbl&qid=1755384744&sprefix=jb%2Caps%2C357&sr=8-42&ufe=app_do%3Aamzn1.fos.9e6a115c-05b9-4b96-8e1c-b1f9ce2ac1a6"
+          >JBL, Fone de Ouvido Bluetooth, Tune 770NC, Over Ear, Sem Fio, Com
+          Cancelamento de Ruído - Preto</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/JBL-Fone-Ouvido-Tune-520BT/dp/B0BWVQKSSY/ref=sr_1_40?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=TUN64F84T2G1&dib=eyJ2IjoiMSJ9.uIMac-dsvMgB6uM2lDeg0hdBON5mBOAhmTxhY0J0djwfngRvCriwf1YMk7ECJpt23XggOhJLe398m-Ky8nCQkg2XBuWLppeIcx9AWcmejL9GQPTHAaP5hZJlLmEhjh8dytDtPsEMrxg_LyFTHmhZavXKv-L3O9YywJLzLi64JA63Wa48cBIu8uUCcWCmnHvPrTjeSxlOXQsm7SXZw12yk4y40AoOs-M8l9n3i2_hvbuqxzrTojtYXhnBgUVXg3RhZkwO5guT5Ff_iP2DOEqOclktgGJ_X-mKr9LIfzEkiYU.Zj4Ans1ETEgbji7fGtY8p-75IlPXnTjppWoR3G2ZFTc&dib_tag=se&keywords=jbl&qid=1755384744&sprefix=jb%2Caps%2C357&sr=8-40&ufe=app_do%3Aamzn1.fos.5d9454de-5156-4d94-8097-3af5c6f2fea5"
+          >JBL, Fone de Ouvido On ear, Tune 720BT - Preto</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/JBL-Caixa-PartyBox-Bluetooth-Respingos/dp/B0D6NKG6WY/ref=sr_1_14?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=TUN64F84T2G1&dib=eyJ2IjoiMSJ9.uIMac-dsvMgB6uM2lDeg0hdBON5mBOAhmTxhY0J0djwfngRvCriwf1YMk7ECJpt23XggOhJLe398m-Ky8nCQkg2XBuWLppeIcx9AWcmejL9GQPTHAaP5hZJlLmEhjh8dytDtPsEMrxg_LyFTHmhZavXKv-L3O9YywJLzLi64JA63Wa48cBIu8uUCcWCmnHvPrTjeSxlOXQsm7SXZw12yk4y40AoOs-M8l9n3i2_hvbuqxzrTojtYXhnBgUVXg3RhZkwO5guT5Ff_iP2DOEqOclktgGJ_X-mKr9LIfzEkiYU.Zj4Ans1ETEgbji7fGtY8p-75IlPXnTjppWoR3G2ZFTc&dib_tag=se&keywords=jbl&qid=1755384744&sprefix=jb%2Caps%2C357&sr=8-14&ufe=app_do%3Aamzn1.fos.a492fd4a-f54d-4e8d-8c31-35e0a04ce61e"
+          >JBL, Caixa de Som, PartyBox Club 120, Bluetooth, Show de Luzes, À
+          Prova de Respingos - 160W RMS</a
+        ><br />
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.com.br/Bluetooth-Partybox-Encore-Essential-Respingos/dp/B0D54XNXH7/ref=sr_1_28?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=TUN64F84T2G1&dib=eyJ2IjoiMSJ9.uIMac-dsvMgB6uM2lDeg0hdBON5mBOAhmTxhY0J0djwfngRvCriwf1YMk7ECJpt23XggOhJLe398m-Ky8nCQkg2XBuWLppeIcx9AWcmejL9GQPTHAaP5hZJlLmEhjh8dytDtPsEMrxg_LyFTHmhZavXKv-L3O9YywJLzLi64JA63Wa48cBIu8uUCcWCmnHvPrTjeSxlOXQsm7SXZw12yk4y40AoOs-M8l9n3i2_hvbuqxzrTojtYXhnBgUVXg3RhZkwO5guT5Ff_iP2DOEqOclktgGJ_X-mKr9LIfzEkiYU.Zj4Ans1ETEgbji7fGtY8p-75IlPXnTjppWoR3G2ZFTc&dib_tag=se&keywords=jbl&qid=1755384744&sprefix=jb%2Caps%2C357&sr=8-28&ufe=app_do%3Aamzn1.fos.a492fd4a-f54d-4e8d-8c31-35e0a04ce61e"
+          >Caixa de Som Jbl Bluetooth Partybox Encore Essential, com Design à
+          Prova de Respingos, 100w</a
+        ><br />
+      </li>
+    </ul>
+    <ul>
+      <div class="h2-com-botao">
+        <h2>🚀 VSCode - Atalhos Úteis</h2>
+      </div>
+      <section class="atalhos-section">
+        <div class="atalho-bloco" style="animation-delay: 0.2s">
+          <h3>🔲 Atalhos da barra lateral</h3>
+          <ul>
+            <li><strong>Debugger:</strong> <code>Ctrl + Shift + D</code></li>
+            <li><strong>Arquivos:</strong> <code>Ctrl + Shift + E</code></li>
+            <li><strong>Extensões:</strong> <code>Ctrl + Shift + X</code></li>
+            <li>
+              <strong>Source Control:</strong> <code>Ctrl + Shift + G</code>
+            </li>
+            <li><strong>Pesquisa:</strong> <code>Ctrl + Shift + F</code></li>
+            <li>
+              <strong>Remote Explorer:</strong> <code>Ctrl + Shift + P</code> e
+              digitar "Remote Explorer"
+            </li>
+            <li><strong>Outline:</strong> <code>Ctrl + Shift + O</code></li>
+          </ul>
+        </div>
+
+        <div class="atalho-bloco" style="animation-delay: 0.2s">
+          <h3>🧭 Atalhos da barra superior</h3>
+          <ul>
+            <li><strong>File:</strong> <code>Alt + F</code></li>
+            <li><strong>Edit:</strong> <code>Alt + E</code></li>
+            <li><strong>Selection:</strong> <code>Alt + S</code></li>
+            <li><strong>View:</strong> <code>Alt + V</code></li>
+            <li><strong>Go:</strong> <code>Alt + G</code></li>
+            <li><strong>Run:</strong> <code>Alt + R</code></li>
+            <li><strong>Terminal:</strong> <code>Alt + T</code></li>
+            <li><strong>Help:</strong> <code>Alt + H</code></li>
+          </ul>
+        </div>
+
+        <div class="atalho-bloco" style="animation-delay: 0.2s">
+          <h3>⌨️ Outros atalhos importantes</h3>
+          <ul>
+            <li>
+              <strong>Paleta de Comandos:</strong> <code>Ctrl + Shift + P</code>
+            </li>
+            <li>
+              <strong>Alternar Barra Lateral:</strong> <code>Ctrl + B</code>
+            </li>
+            <li>
+              <strong>Alternar Barra de Status:</strong> <code>Ctrl + J</code>
+            </li>
+            <li>
+              <strong>Alternar Barra de Atividades:</strong>
+              <code>Ctrl + Shift + B</code>
+            </li>
+            <li><strong>Abrir Configurações:</strong> <code>Ctrl + ,</code></li>
+            <li><strong>Mostrar Menu:</strong> <code>Alt</code></li>
+            <li>
+              <strong>Abrir Atalhos de Teclado:</strong>
+              <code>Ctrl + K, Ctrl + S</code>
+            </li>
+            <li><strong>Zen Mode:</strong> <code>Ctrl + K, Z</code></li>
+          </ul>
+        </div>
+      </section>
+    </ul>
+    <div class="botoes-links">
+      <a
+        href="https://beacons.ai/jonathanjorge"
+        class="botao-link-pessoal"
+        >Meus Links</a
+      >
+      <a
+        href="http://127.0.0.1:5500/Projetos%20Pessoais/Portif%C3%B3lio/index.html"
+        class="botao-link-pessoal"
+        >Portfólio</a
+      >
+    </div>
+    <footer>
+      <p>Feito por Jonathan • 2025 • Todos os direitos reservados</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.1/lib/browser/math.js"></script>
+  </body>
+</html>

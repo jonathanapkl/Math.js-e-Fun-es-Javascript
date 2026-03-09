@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Site Math/favicon-32x32.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Site Math/site/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <title>Mais opções de Funções</title>
+  </head>
+  <body>
+    <h1>Mais opções de Funções Úteis de Javascript</h1>
+    <h2>✅ 1. Manipulação de Strings</h2>
+    <pre><code class="language-js">
+        const texto = "JavaScript é poderoso!";
+        console.log("Tamanho: ", texto.length);                         // 23
+        console.log("Maiúsculas: ", texto.toUpperCase());               // JAVASCRIPT É PODEROSO!
+        console.log("Minúsculas: ", texto.toLowerCase());               // javascript é poderoso!
+        console.log("Contém 'poderoso'? ", texto.includes("poderoso")); // true
+        console.log("Substring: ", texto.substring(0, 10));             // JavaScript
+      </code></pre>
+    <h2>✅ 2. Números e Math</h2>
+    <pre><code class="language-js">
+        console.log("Pi: ", Math.PI);                           // 3.1415...
+        console.log("Arredondar pra cima: ", Math.ceil(4.2));   // 5
+        console.log("Arredondar pra baixo: ", Math.floor(4.9)); // 4
+        console.log("Número aleatório: ", Math.random());       // ex: 0.374
+      </code></pre>
+    <h2>✅ 3. Arrays (Vetores)</h2>
+    <pre><code class="language-js">
+        const frutas = ["maçã", "banana", "laranja"];
+        console.log("Tamanho: ", frutas.length);            // 3
+        frutas.push("uva");
+        console.log("Adicionando uva: ", frutas);           // ["maçã", "banana", "laranja", "uva"]
+        rutas.pop();
+        console.log("Removendo último: ", frutas);          // ["maçã", "banana", "laranja"]
+        console.log("Primeiro elemento: ", frutas[0]);      // maçã
+      </code></pre>
+    <h2>✅ 4. Objetos</h2>
+    <pre><code class="language-js">
+        const usuario = {
+          nome: "Jonathan",
+          idade: 22,
+          ativo: true
+        };
+        console.log("Nome: ", usuario.nome);          // Jonathan
+        usuario.idade = 23;
+        console.log("Nova idade: ", usuario.idade);   // 23
+        console.log("Está ativo? ", usuario.ativo);   // true
+      </code></pre>
+    <h2>✅ 5. Funções</h2>
+    <pre><code class="language-js">
+        function somar(a, b) {
+          return a + b;
+        }
+        console.log("Soma: ", somar(5, 3));   // 8
+      </code></pre>
+    <h2>✅ 6. Laços (for, while)</h2>
+    <pre><code class="language-js">
+        for (let i = 1; i <= 3; i++) {
+          console.log("Contando: ", i);
+        }
+        let n = 0;
+        while (n < 3) {
+          console.log("While: ", n);
+          n++;
+        }
+      </code></pre>
+    <h2>✅ 7. Condicionais</h2>
+    <pre><code class="language-js">
+        let idade = 18;
+        if (idade >= 18) {
+          console.log("Maior de idade");
+        } else {
+          console.log("Menor de idade");
+        }
+      </code></pre>
+  </body>
+</html>

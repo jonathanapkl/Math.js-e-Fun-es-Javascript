@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Site Math/favicon-32x32.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Site Math/site/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <title>Mais opções de Código</title>
+  </head>
+  <body>
+    <h1>Mais opções de Exemplos de Código de Math.js em Javascript</h1>
+    <pre><code class="language-js">
+    // Importando a biblioteca
+const math = require('mathjs');
+// Potência
+console.log("Potência: ", math.pow(3, 4));         // 81
+// Raiz quadrada
+console.log("Raiz quadrada: ", math.sqrt(49));     // 7
+// Arredondar número
+console.log("Arredondado: ", math.round(3.14159, 2)); // 3.14
+// Máximo e mínimo
+console.log("Máximo: ", math.max(10, 22, 3));       // 22
+console.log("Mínimo: ", math.min(10, 22, 3));       // 3
+// Fatorial
+console.log("Fatorial: ", math.factorial(5));       // 120
+// Valor absoluto
+console.log("Absoluto: ", math.abs(-42));           // 42
+// GCD (máximo divisor comum)
+console.log("MDC de 18 e 24: ", math.gcd(18, 24));   // 6
+// LCM (mínimo múltiplo comum)
+console.log("MMC de 4 e 6: ", math.lcm(4, 6));       // 12
+// Random (aleatório entre 0 e 1)
+console.log("Aleatório: ", math.random());          // ex: 0.6543...
+// RandomInt (aleatório inteiro entre dois valores)
+console.log("Inteiro aleatório: ", math.randomInt(1, 10)); // ex: 7
+// Eval com expressão matemática
+console.log("Resultado da expressão: ", math.evaluate('7 * (5 + 2)')); // 49
+
+  </code></pre>
+  </body>
+</html>

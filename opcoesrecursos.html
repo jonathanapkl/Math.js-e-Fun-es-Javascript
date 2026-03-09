@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Site Math/favicon-32x32.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Site Math/site/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <title>Mais opções de Recursos</title>
+  </head>
+  <body>
+    <h1>Mais opções de recursos Úteis de Math.js</h1>
+    <h2>📏 Conversão de unidades</h2>
+    <pre><code class="language-js">
+        console.log(math.unit('5 cm').to('m').toString());      // 0.05 m
+        console.log(math.unit('3 kg').to('g').toString());      // 3000 g
+      </code></pre>
+    <h2>🧮 Simplificação de expressões algébricas</h2>
+    <pre><code class="language-js">
+        const simplificada = math.simplify('2x + 3x - x');
+        console.log("Expressão simplificada:", simplificada.toString());  // 4x
+      </code></pre>
+    <h2>🧠 Derivada simbólica</h2>
+    <pre><code class="language-js">
+        const derivada = math.derivative('x^2 + x', 'x');
+        console.log("Derivada:", derivada.toString());  // 2*x + 1
+      </code></pre>
+    <h2>📐 Trigonometria</h2>
+    <pre><code class="language-js">
+        console.log("Seno(90°):", math.sin(math.unit(90, 'deg')));  // 1
+        console.log("Cosseno(0°):", math.cos(math.unit(0, 'deg'))); // 1
+      </code></pre>
+    <h2>🧪 Avaliação de expressões com variáveis</h2>
+    <pre><code class="language-js">
+        console.log(math.evaluate('a * b + c', { a: 2, b: 3, c: 4 })); // 10
+      </code></pre>
+    <h2>📊 Média, mediana e desvio padrão</h2>
+    <pre><code class="language-js">
+        const dados = [4, 8, 6, 5, 3];
+        console.log("Média:", math.mean(dados));        // 5.2
+        console.log("Mediana:", math.median(dados));    // 5
+        console.log("Desvio padrão:", math.std(dados)); // 1.720
+      </code></pre>
+    <h2>📏 Formato bonito de resultado</h2>
+    <pre><code class="language-js">
+        console.log(math.format(1234567.89, { notation: 'exponential' })); // 1.23456789e+6
+        console.log(math.format(0.0001234, { precision: 4 }));             // 0.0001234
+      </code></pre>
+  </body>
+</html>
