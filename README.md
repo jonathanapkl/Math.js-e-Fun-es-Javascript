@@ -21,3 +21,5 @@ Este é um projeto interativo desenvolvido para facilitar o estudo da biblioteca
 - **[Math.js](https://mathjs.org/)**: Motor para cálculos complexos e manipulação de unidades.
 - **[Highlight.js](https://highlightjs.org/)**: Para deixar os blocos de código legíveis e coloridos.
 - **[CodeMirror](https://codemirror.net/)**: Integração preparada para o editor de texto (v5
+
+https://jonathanapkl.github.io/Math.js-e-Fun-es-Javascript/
